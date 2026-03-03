@@ -1,0 +1,53 @@
+/* صفحة سياسة الخصوصية */
+.privacy-section {
+    padding: 4rem 5%;
+    background-color: #fff;
+}
+
+.privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.privacy-content h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin: 2rem 0 1rem;
+}
+
+.privacy-content h3:first-of-type {
+    margin-top: 0;
+}
+
+.privacy-content p {
+    margin-bottom: 1.5rem;
+    color: #34495e;
+}
+
+.privacy-content ul {
+    margin-bottom: 1.5rem;
+    padding-right: 2rem;
+}
+
+.privacy-content li {
+    margin-bottom: 0.5rem;
+    color: #34495e;
+}
+
+.privacy-content li strong {
+    color: #e67e22;
+}
+
+.last-updated {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+/* تحديث رابط الفوتر النشط */
+.footer-col ul li a.active {
+    color: #f39c12;
+}
