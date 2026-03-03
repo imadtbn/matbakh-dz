@@ -63,7 +63,7 @@ ul {
 
 /* hero header */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://media.licdn.com/dms/image/v2/D561BAQEP53jBZ7DF7g/company-background_10000/company-background_10000/0/1654107773435/fooda_cover?e=2147483647&v=beta&t=S3QuYRrB38j_sGJPRR0pocdYYQpP9Fnyo-EWLoU9C8o') center/cover no-repeat;
     height: 70vh;
     display: flex;
     align-items: center;
@@ -85,7 +85,7 @@ ul {
 
 /* sub-header (للصفحات الفرعية) */
 .sub-header {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x400') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.sheknows.com/wp-content/uploads/2020/06/best-picnic-food-cover-amazon.jpg') center/cover no-repeat;
     height: 30vh;
     display: flex;
     flex-direction: column;
