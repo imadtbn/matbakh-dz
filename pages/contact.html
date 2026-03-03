@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطبخ الجزائر - اتصل بنا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- هيدر فرعي -->
+    <header class="sub-header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🍽️ مطبخ الجزائر</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="category.html?cat=algerian">طبخ جزائري</a></li>
+                <li><a href="category.html?cat=modern">عصري</a></li>
+                <li><a href="category.html?cat=diet">حميات</a></li>
+                <li><a href="category.html?cat=desserts">حلويات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        <div class="page-title">
+            <h2>اتصل بنا</h2>
+        </div>
+    </header>
+
+    <main>
+        <!-- معلومات الاتصال -->
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>العنوان</h3>
+                        <p>15 نهج الاستقلال، الجزائر العاصمة، الجزائر</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>الهاتف</h3>
+                        <p>+213 (0) 23 45 67 89</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>contact@matbakh-dz.com</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>ساعات العمل</h3>
+                        <p>السبت - الخميس: 9:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- نموذج الاتصال -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h3>أرسل لنا رسالة</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">إرسال <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- الخريطة (اختياري) -->
+        <section class="map-section">
+            <div class="container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102396.699977104!2d3.041319!3d36.752887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e4f7e8b5b3b7b%3A0x8b0b3b5b5b5b5b5b!2sAlgiers%2C%20Algeria!5e0!3m2!1sen!2sdz!4v1620000000000!5m2!1sen!2sdz" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>مطبخ الجزائر</h3>
+                <p>موقع يقدم أشهى الوصفات الجزائرية التقليدية والعصرية، مع خيارات صحية تلائم جميع الأنظمة الغذائية.</p>
+            </div>
+            <div class="footer-col">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="contact.html" class="active">اتصل بنا</a></li>
+                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>تواصل معنا</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 مطبخ الجزائر. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // معالجة إرسال النموذج (منع الإرسال الافتراضي وعرض رسالة)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً لتواصلك معنا! سنرد عليك في أقرب وقت.');
+            this.reset(); // إعادة تعيين الحقول
+        });
+    </script>
+</body>
+</html>
