@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../style/style-main.css">
 
 </head>
+
 <body>
     <!-- هيدر فرعي -->
     <header class="sub-header">
@@ -19,12 +21,12 @@
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">الرئيسية</a></li>
-                <li><a href="cuisine-dz.html" >طبخ جزائري</a></li>
+                <li><a href="cuisine-dz.html">طبخ جزائري</a></li>
                 <li><a href="salads.html">السلطات</a></li>
-                <li><a href="diet.html"class="active">حميات غذائية</a></li>
-                <li><a href="traditional-desserts.html" >حلويات تقليدية</a></li>
+                <li><a href="diet.html" class="active">حميات غذائية</a></li>
+                <li><a href="traditional-desserts.html">حلويات تقليدية</a></li>
                 <li><a href="modern-desserts.html">حلويات عصرية</a></li>
-                <li><a href="about.html" >من نحن</a></li>
+                <li><a href="about.html">من نحن</a></li>
                 <li><a href="contact.html">اتصل بنا</a></li>
             </ul>
             <div class="burger">
@@ -48,103 +50,215 @@
         <!-- شبكة بطاقات الحميات -->
         <section class="section">
             <div class="cards-grid" id="diet-cards">
-                <!-- بطاقة تنحيف 1 -->
-                <div class="card" data-category="loss">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="سلطة الكينوا">
-                        <span class="card-badge diet-loss">تنحيف</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>سلطة الكينوا بالخضار</h3>
-                        <p class="ingredients">مقادير: كينوا، خيار، طماطم، فلفل ألوان، ليمون، زيت زيتون...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-20</span>
-                            <span class="author">نشر: أخصائية تغذية</span>
+                <!-- النافذة المنبثقة (Modal) -->
+                <div id="recipeModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <div class="modal-body">
+                            <!-- يتم تعبئة المحتوى ديناميكياً عبر JavaScript -->
                         </div>
                     </div>
                 </div>
 
-                <!-- بطاقة تنحيف 2 -->
-                <div class="card" data-category="loss">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="شوربة عدس">
-                        <span class="card-badge diet-loss">تنحيف</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>شوربة عدس بالخضار</h3>
-                        <p class="ingredients">مقادير: عدس، جزر، كرفس، بصل، ثوم، كمون...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-18</span>
-                            <span class="author">نشر: أمل</span>
-                        </div>
+                <script>
+                    // تحميل بيانات JSON وعرض البطاقات
+                    let recipesData = [];
+
+                    async function loadRecipes() {
+                        try {
+                            const response = await fetch('../data/diet.json'); // تأكد من المسار الصحيح
+                            recipesData = await response.json();
+                            renderCards('all');
+                        } catch (error) {
+                            console.error('خطأ في تحميل البيانات:', error);
+                            // يمكن عرض رسالة للمستخدم
+                        }
+                    }
+
+                    function renderCards(filter) {
+                        const container = document.getElementById('diet-cards');
+                        container.innerHTML = ''; // تفريغ الحاوية
+
+                        const filtered = filter === 'all' ? recipesData : recipesData.filter(r => r.category === filter);
+
+                        filtered.forEach(recipe => {
+                            const card = document.createElement('div');
+                            card.className = 'card';
+                            card.dataset.id = recipe.id;
+                            card.dataset.category = recipe.category;
+
+                            card.innerHTML = `
+                <div class="card-image">
+                    <img src="${recipe.image}" alt="${recipe.title}">
+                    <span class="card-badge diet-${recipe.category}">${recipe.badge}</span>
+                </div>
+                <div class="card-content">
+                    <h3>${recipe.title}</h3>
+                    <p class="ingredients">مقادير: ${recipe.ingredients.join('، ')}</p>
+                    <div class="card-footer">
+                        <span class="date"><i class="far fa-calendar-alt"></i> ${recipe.date}</span>
+                        <span class="author">نشر: ${recipe.author}</span>
                     </div>
                 </div>
+            `;
 
-                <!-- بطاقة تنحيف 3 -->
-                <div class="card" data-category="loss">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="صدر دجاج مشوي">
-                        <span class="card-badge diet-loss">تنحيف</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>صدر دجاج مشوي بالخضار</h3>
-                        <p class="ingredients">مقادير: صدر دجاج، بروكلي، جزر، بهارات، زيت زيتون...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-15</span>
-                            <span class="author">نشر: كريم</span>
-                        </div>
-                    </div>
-                </div>
+                            // إضافة حدث النقر لفتح النافذة المنبثقة
+                            card.addEventListener('click', () => showModal(recipe));
+                            container.appendChild(card);
+                        });
+                    }
 
-                <!-- بطاقة تسمين 1 -->
-                <div class="card" data-category="gain">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="مخبوز باللحم">
-                        <span class="card-badge diet-gain">تسمين</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>مخبوز باللحم والجبن</h3>
-                        <p class="ingredients">مقادير: لحم مفروم، جبن مبشور، عجينة، كريمة، بيض...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-17</span>
-                            <span class="author">نشر: محمد</span>
-                        </div>
-                    </div>
-                </div>
+                    function showModal(recipe) {
+                        const modal = document.getElementById('recipeModal');
+                        const modalBody = modal.querySelector('.modal-body');
+                        const videoHtml = recipe.video ? `
+            <div class="video-container">
+                <iframe width="100%" height="315" src="${recipe.video}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        ` : '';
 
-                <!-- بطاقة تسمين 2 -->
-                <div class="card" data-category="gain">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="بطاطا مهروسة">
-                        <span class="card-badge diet-gain">تسمين</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>بطاطا مهروسة بالزبدة والكريمة</h3>
-                        <p class="ingredients">مقادير: بطاطس، زبدة، كريمة طبخ، جبن، ملح...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-12</span>
-                            <span class="author">نشر: سلمى</span>
-                        </div>
-                    </div>
-                </div>
+                        modalBody.innerHTML = `
+            <h2>${recipe.title}</h2>
+            <img src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; border-radius:8px;">
+            <p><strong>الوصف:</strong> ${recipe.description}</p>
+            <p><strong>المقادير:</strong></p>
+            <ul>${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}</ul>
+            ${videoHtml}
+            <div class="author-info">
+                <p><strong>نشر:</strong> ${recipe.author}</p>
+                <p><strong>تاريخ النشر:</strong> ${recipe.date}</p>
+                <p><strong>رابط التواصل:</strong> <a href="${recipe.authorLink}" target="_blank">${recipe.authorLink}</a></p>
+            </div>
+        `;
 
-                <!-- بطاقة تسمين 3 -->
-                <div class="card" data-category="gain">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="كوكتيل زيادة الوزن">
-                        <span class="card-badge diet-gain">تسمين</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>كوكتيل التمر والمكسرات</h3>
-                        <p class="ingredients">مقادير: تمر، حليب كامل الدسم، موز، زبدة فول سوداني، عسل...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-10</span>
-                            <span class="author">نشر: أخصائي تغذية</span>
-                        </div>
-                    </div>
-                </div>
+                        modal.style.display = 'block';
+                    }
 
-                <!-- المزيد من البطاقات يمكن إضافتها -->
+                    // إغلاق النافذة المنبثقة
+                    document.querySelector('.close-modal').addEventListener('click', () => {
+                        document.getElementById('recipeModal').style.display = 'none';
+                    });
+
+                    window.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('modal')) {
+                            e.target.style.display = 'none';
+                        }
+                    });
+
+                    // أزرار التصفية
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                            btn.classList.add('active');
+                            renderCards(btn.dataset.filter);
+                        });
+                    });
+
+                    // بدء التحميل
+                    loadRecipes();
+                </script>
+
+                <style>
+                    /* تنسيقات النافذة المنبثقة */
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        z-index: 1000;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        overflow-y: auto;
+                    }
+
+                    .modal-content {
+                        background-color: #fff;
+                        margin: 5% auto;
+                        padding: 20px;
+                        border-radius: 15px;
+                        width: 90%;
+                        max-width: 600px;
+                        position: relative;
+                        animation: modalFadeIn 0.3s;
+                    }
+
+                    @keyframes modalFadeIn {
+                        from {
+                            opacity: 0;
+                            transform: translateY(-30px);
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    .close-modal {
+                        position: absolute;
+                        left: 20px;
+                        top: 15px;
+                        font-size: 28px;
+                        font-weight: bold;
+                        color: #888;
+                        cursor: pointer;
+                        transition: color 0.2s;
+                    }
+
+                    .close-modal:hover {
+                        color: #000;
+                    }
+
+                    .modal-body {
+                        margin-top: 20px;
+                    }
+
+                    .modal-body img {
+                        margin-bottom: 15px;
+                    }
+
+                    .modal-body ul {
+                        list-style-type: disc;
+                        padding-right: 20px;
+                        margin-bottom: 15px;
+                    }
+
+                    .author-info {
+                        border-top: 1px solid #eee;
+                        padding-top: 15px;
+                        margin-top: 15px;
+                    }
+
+                    .video-container {
+                        margin: 15px 0;
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        /* نسبة 16:9 */
+                        height: 0;
+                        overflow: hidden;
+                    }
+
+                    .video-container iframe {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 8px;
+                    }
+
+                    /* تحسين استجابة البطاقات */
+                    .card {
+                        cursor: pointer;
+                        transition: transform 0.2s, box-shadow 0.2s;
+                    }
+
+                    .card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                    }
+                </style>
             </div>
         </section>
     </main>
@@ -181,6 +295,7 @@
     </footer>
 
     <script src="script.js"></script>
+
     <script>
         // فلترة البطاقات حسب الفئة (تنحيف / تسمين)
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -208,5 +323,7 @@
             });
         });
     </script>
+
 </body>
+
 </html>
