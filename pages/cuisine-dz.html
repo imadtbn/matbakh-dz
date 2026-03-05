@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../style/style-main.css">
 
 </head>
+
 <body>
     <!-- هيدر بسيط (بدون غلاف كبير) -->
     <header class="sub-header">
@@ -23,9 +24,9 @@
                 <li><a href="cuisine-dz.html" class="active">طبخ جزائري</a></li>
                 <li><a href="salads.html">السلطات</a></li>
                 <li><a href="diet.html">حميات غذائية</a></li>
-                <li><a href="traditional-desserts.html" >حلويات تقليدية</a></li>
+                <li><a href="traditional-desserts.html">حلويات تقليدية</a></li>
                 <li><a href="modern-desserts.html">حلويات عصرية</a></li>
-                <li><a href="about.html" >من نحن</a></li>
+                <li><a href="about.html">من نحن</a></li>
                 <li><a href="contact.html">اتصل بنا</a></li>
             </ul>
             <div class="burger">
@@ -40,39 +41,35 @@
     <main>
         <!-- شبكة البطاقات الخاصة بالقسم -->
         <section class="section">
-            <div class="cards-grid">
-                <!-- بطاقات متعددة (يمكن تكرارها) -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="طبق">
-                        <span class="card-badge">تقليدي</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>كسكس بالخضار</h3>
-                        <p class="ingredients">مقادير: كسكس، لحم، خضار مشكلة، حمص، بهارات...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-15</span>
-                            <span class="author">نشر: سلمى</span>
-                        </div>
-                    </div>
+            <div class="cards-grid" id="recipesContainer"></div>
+
+                    <!-- نافذة الوصفة -->
+        <div id="recipeModal" class="recipe-modal">
+            <div class="modal-content">
+
+                <span class="close-modal">&times;</span>
+
+                <img id="modalImage">
+
+                <h2 id="modalTitle"></h2>
+
+                <h3>المكونات</h3>
+                <p id="modalIngredients"></p>
+
+                <h3>طريقة التحضير</h3>
+                <p id="modalSteps"></p>
+
+                <div class="modal-author">
+                    <span id="modalAuthor"></span>
+                    <div class="modal-social" id="modalSocial"></div>
                 </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="طبق">
-                        <span class="card-badge">عصري</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>شوربة الفريك بالدجاج</h3>
-                        <p class="ingredients">مقادير: فريك، دجاج، طماطم، كزبرة، بصل...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-10</span>
-                            <span class="author">نشر: كريم</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- أضف المزيد من البطاقات بنفس النمط -->
+
             </div>
+        </div>
         </section>
+
+
+
     </main>
 
     <!-- الفوتر نفسه -->
@@ -107,5 +104,9 @@
     </footer>
 
     <script src="../javascript/js-main.js"></script>
+    <script src="../javascript/cardRenderer-cuisine-dz.js"></script>
+
+
 </body>
+
 </html>
