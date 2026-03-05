@@ -1,10 +1,10 @@
 [
     {
       "id": 1,
-      "title": "سلطة 000000الكينوا بالخضار",
+      "title": "سلطة الكينوا بالخضار",
       "category": "loss",
       "badge": "تنحيف",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyjKzidlqSH7yBDqv2XcG_3icQKg-0cWwDwA&s",
+      "image": "https://via.placeholder.com/300x200",
       "ingredients": ["كينوا", "خيار", "طماطم", "فلفل ألوان", "ليمون", "زيت زيتون"],
       "description": "وصفة سلطة الكينوا المنعشة والمثالية للرجيم. غنية بالألياف والبروتين.",
       "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
@@ -58,6 +58,7 @@
       "badge": "تسمين",
       "image": "https://via.placeholder.com/300x200",
       "ingredients": ["بطاطس", "زبدة", "كريمة طبخ", "جبن", "ملح"],
+      "method": ["0000000000000", "89898", "88888 5555", "22222222222222", "22222"],
       "description": "بطاطا مهروسة كريمية غنية بالدهون الصحية.",
       "video": "",
       "author": "سلمى",
