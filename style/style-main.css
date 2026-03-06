@@ -456,3 +456,26 @@ footer {
     margin-bottom: 15px;
     white-space: pre-line; /* يحافظ على فواصل الأسطر */
 }
+
+.search-box{
+    max-width:500px;
+    margin:20px auto;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:12px 15px 12px 40px;
+    border-radius:25px;
+    border:1px solid #ddd;
+    font-size:15px;
+    font-family:"Tajawal",sans-serif;
+}
+
+.search-box i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#888;
+}
