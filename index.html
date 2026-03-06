@@ -120,6 +120,11 @@
     </footer>
 
     <script src="javascript/js-main.js"></script>
+    <script src="javascript/algerien.js"></script>
+    <script src="javascript/diet.js"></script>
+    <script src="javascript/modern-desserts.js"></script>
+    <script src="javascript/traditional-desserts.js"></script>
+    <script src="javascript/salads.js"></script>
 
     <script>
         fetch('recipes.json')
@@ -129,30 +134,30 @@
 
                 // عرض وصفات الطبخ الجزائري (آخر 4)
                 const algerianContainer = document.querySelector('#algerian-cards');
-                const algerianRecipes = recipes.filter(r => r.category.includes('algerian')).slice(0, 4);
+                const algerianRecipes = recipes.filter(r => r.category.includes('algerian')).slice(0, 3);
                 algerianContainer.innerHTML = algerianRecipes.map(renderCard).join('');
 
                 // عرض وصفات الحميات (آخر 4)
                 const dietContainer = document.querySelector('#diet-cards');
-                const dietRecipes = recipes.filter(r => r.category.includes('diet')).slice(0, 4);
+                const dietRecipes = recipes.filter(r => r.category.includes('diet')).slice(0, 3);
                 dietContainer.innerHTML = dietRecipes.map(renderCard).join('');
 
                 // عرض وصفات الحلويات (آخر 4)
                 const dessertsContainer = document.querySelector('#desserts-cards');
-                const dessertsRecipes = recipes.filter(r => r.category.includes('dessert')).slice(0, 4);
+                const dessertsRecipes = recipes.filter(r => r.category.includes('dessert')).slice(0, 3);
                 dessertsContainer.innerHTML = dessertsRecipes.map(renderCard).join('');
 
                 // عرض السلطات (اختياري)
                 const saladsContainer = document.querySelector('#salads-cards');
                 if (saladsContainer) {
-                    const saladsRecipes = recipes.filter(r => r.category.includes('salad')).slice(0, 4);
+                    const saladsRecipes = recipes.filter(r => r.category.includes('salad')).slice(0, 3);
                     saladsContainer.innerHTML = saladsRecipes.map(renderCard).join('');
                 }
 
                 // عرض traditional (اختياري)
                 const traditionalContainer = document.querySelector('#traditional-cards');
                 if (traditionalContainer) {
-                    const traditionalRecipes = recipes.filter(r => r.category.includes('salad')).slice(0, 4);
+                    const traditionalRecipes = recipes.filter(r => r.category.includes('salad')).slice(0, 3);
                     traditionalContainer.innerHTML = traditionalRecipes.map(renderCard).join('');
                 }
             })
