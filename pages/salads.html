@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مطبخ الجزائر - السلطات</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="../style/style-main.css">
     <link rel="stylesheet" href="../style/salads.css">
     <link rel="stylesheet" href="../style/diet.css">
 
 </head>
+
 <body>
     <!-- هيدر فرعي -->
     <header class="sub-header">
@@ -48,122 +50,119 @@
             <button class="filter-btn" data-filter="modern">سلطات عصرية</button>
         </div>
 
-        <!-- شبكة بطاقات السلطات -->
+        <!-- شبكة بطاقات الحميات -->
         <section class="section">
-            <div class="cards-grid" id="salad-cards">
-                <!-- سلطة تقليدية 1 -->
-                <div class="card" data-category="traditional">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="سلطة مشوية">
-                        <span class="card-badge salad-traditional">تقليدية</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>سلطة مشوية (شاكشوكة)</h3>
-                        <p class="ingredients">مقادير: فلفل مشوي، طماطم مشوية، ثوم، زيت زيتون، تونة (اختياري)...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-21</span>
-                            <span class="author">نشر: خالتي جميلة</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="cards-grid" id="salads-cards"></div>
 
-                <!-- سلطة تقليدية 2 -->
-                <div class="card" data-category="traditional">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="سلطة زيتون">
-                        <span class="card-badge salad-traditional">تقليدية</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>سلطة الزيتون والهريسة</h3>
-                        <p class="ingredients">مقادير: زيتون أسود، هريسة، ثوم، كزبرة، زيت زيتون، ليمون...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-19</span>
-                            <span class="author">نشر: نادية</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- سلطة دايت 1 -->
-                <div class="card" data-category="diet">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="سلطة يونانية">
-                        <span class="card-badge diet-loss">سلطة دايت</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>سلطة يونانية بالجبنة الخفيفة</h3>
-                        <p class="ingredients">مقادير: خيار، طماطم، فلفل أخضر، جبنة فيتا لايت، زيتون، زعتر...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-17</span>
-                            <span class="author">نشر: أخصائية تغذية</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- سلطة دايت 2 -->
-                <div class="card" data-category="diet">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="سلطة الكينوا">
-                        <span class="card-badge diet-loss">سلطة دايت</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>سلطة الكينوا بالأفوكادو</h3>
-                        <p class="ingredients">مقادير: كينوا، أفوكادو، طماطم كرزية، خس، عصير ليمون...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-14</span>
-                            <span class="author">نشر: سلمى</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- سلطة عصرية 1 -->
-                <div class="card" data-category="modern">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="سلطة سيزر">
-                        <span class="card-badge salad-modern">عصرية</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>سلطة سيزر بالدجاج</h3>
-                        <p class="ingredients">مقادير: خس روماني، صدر دجاج مشوي، خبز محمص، جبن بارميزان، صوص سيزر...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-12</span>
-                            <span class="author">نشر: نور</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- سلطة عصرية 2 -->
-                <div class="card" data-category="modern">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="سلطة فواكه">
-                        <span class="card-badge salad-modern">عصرية</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>سلطة الفواكه بالعسل والنعناع</h3>
-                        <p class="ingredients">مقادير: فراولة، مانجو، تفاح، برتقال، عسل، نعناع طازج...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-09</span>
-                            <span class="author">نشر: أسماء</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- سلطة عصرية 3 -->
-                <div class="card" data-category="modern">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200" alt="سلطة تبولة">
-                        <span class="card-badge salad-modern">عصرية</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>تبولة عصرية بالكينوا</h3>
-                        <p class="ingredients">مقادير: كينوا، بقدونس، نعناع، طماطم، بصل أخضر، ليمون، زيت زيتون...</p>
-                        <div class="card-footer">
-                            <span class="date"><i class="far fa-calendar-alt"></i> 2024-03-06</span>
-                            <span class="author">نشر: رانيا</span>
-                        </div>
+            <!-- النافذة المنبثقة (Modal) -->
+            <div id="recipeModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-body">
+                        <!-- يتم تعبئة المحتوى ديناميكياً عبر JavaScript -->
                     </div>
                 </div>
             </div>
-        </section>
+
+            <script>
+                // تحميل بيانات JSON وعرض البطاقات
+                let recipesData = [];
+
+                async function loadRecipes() {
+                    try {
+                        const response = await fetch('../data/salads.json'); // تأكد من المسار الصحيح
+                        recipesData = await response.json();
+                        renderCards('all');
+                    } catch (error) {
+                        console.error('خطأ في تحميل البيانات:', error);
+                        // يمكن عرض رسالة للمستخدم
+                    }
+                }
+
+                function renderCards(filter) {
+                    const container = document.getElementById('salads-cards');
+                    container.innerHTML = ''; // تفريغ الحاوية
+
+                    const filtered = filter === 'all' ? recipesData : recipesData.filter(r => r.category === filter);
+
+                    filtered.forEach(recipe => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        card.dataset.id = recipe.id;
+                        card.dataset.category = recipe.category;
+
+                        card.innerHTML = `
+                <div class="card-image">
+                    <img src="${recipe.image}" alt="${recipe.title}">
+                    <span class="card-badge algerien-${recipe.category}">${recipe.badge}</span>
+                </div>
+                <div class="card-content">
+                    <h3>${recipe.title}</h3>
+                    <p class="ingredients">مقادير: ${recipe.ingredients.join('، ')}</p>
+                    <div class="card-footer">
+                        <span class="date"><i class="far fa-calendar-alt"></i> ${recipe.date}</span>
+                        <span class="author">نشر: ${recipe.author}</span>
+                    </div>
+                </div>
+            `;
+
+                        // إضافة حدث النقر لفتح النافذة المنبثقة
+                        card.addEventListener('click', () => showModal(recipe));
+                        container.appendChild(card);
+                    });
+                }
+
+                function showModal(recipe) {
+                    const modal = document.getElementById('recipeModal');
+                    const modalBody = modal.querySelector('.modal-body');
+                    const videoHtml = recipe.video ? `
+            <div class="video-container">
+                <iframe width="100%" height="280" src="${recipe.video}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        ` : '';
+
+                    modalBody.innerHTML = `
+            <h2>${recipe.title}</h2>
+            <img src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; border-radius:8px;">
+            <p><strong>الوصف:</strong> ${recipe.description}</p>
+            <p><strong>المقادير:</strong> ${recipe.ingredients}</p>
+            <p><strong>طريقة التحضير:</strong> ${recipe.method}</p>
+
+            ${videoHtml}
+            <div class="author-info">
+                <p><strong>نشر:</strong> ${recipe.author}</p>
+                <p><strong>تاريخ النشر:</strong> ${recipe.date}</p>
+                <p><strong>رابط التواصل:</strong> <a href="${recipe.authorLink}" target="_blank">${recipe.authorLink}</a></p>
+            </div>
+        `;
+
+                    modal.style.display = 'block';
+                }
+
+                // إغلاق النافذة المنبثقة
+                document.querySelector('.close-modal').addEventListener('click', () => {
+                    document.getElementById('recipeModal').style.display = 'none';
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('modal')) {
+                        e.target.style.display = 'none';
+                    }
+                });
+
+                // أزرار التصفية
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        renderCards(btn.dataset.filter);
+                    });
+                });
+
+                // بدء التحميل
+                loadRecipes();
+            </script>
     </main>
 
     <!-- الفوتر -->
@@ -199,40 +198,6 @@
 
     <script src="../javascript/js-main.js"></script>
 
-    <!-- في نهاية salads.html -->
-<script src="../javascript/cardRenderer.js"></script>
-
-<script>
-    fetch('recipes.json')
-        .then(response => response.json())
-        .then(data => {
-            const recipes = data.recipes;
-            const container = document.querySelector('#salads-grid');
-            const filterButtons = document.querySelectorAll('.filter-btn');
-
-            function displayRecipes(categoryFilter = 'all') {
-                let filtered = recipes.filter(r => r.category.includes('salad'));
-                if (categoryFilter !== 'all') {
-                    filtered = filtered.filter(r => r.category === categoryFilter);
-                }
-                container.innerHTML = filtered.map(renderCard).join('');
-            }
-
-            // العرض الأولي
-            displayRecipes('all');
-
-            // إضافة مستمعي الأحداث لأزرار التصفية
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    const filter = btn.dataset.filter;
-                    displayRecipes(filter);
-                });
-            });
-        });
-</script>
-
     <script>
         // فلترة البطاقات
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -257,4 +222,5 @@
         });
     </script>
 </body>
+
 </html>
