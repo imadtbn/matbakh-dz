@@ -481,7 +481,7 @@ footer {
     border: 1px solid #ced4da;
     border-radius: 20px;
     font-family: 'Tajawal', sans-serif;
-    width: 250px;
+    width: 210px;
 }
 
 .search-container i {
@@ -499,7 +499,7 @@ footer {
     font-weight: 500;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
 }
 
 .btn-submit:hover {
