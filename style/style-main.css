@@ -90,7 +90,7 @@ ul {
 /* hero header */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.licdn.com/dms/image/v2/D561BAQEP53jBZ7DF7g/company-background_10000/company-background_10000/0/1654107773435/fooda_cover?e=2147483647&v=beta&t=S3QuYRrB38j_sGJPRR0pocdYYQpP9Fnyo-EWLoU9C8o') center/cover no-repeat;
-    height: 70vh;
+    height: 55vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,7 +112,7 @@ ul {
 /* sub-header (للصفحات الفرعية) */
 .sub-header {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.sheknows.com/wp-content/uploads/2020/06/best-picnic-food-cover-amazon.jpg') center/cover no-repeat;
-    height: 30vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -670,50 +670,82 @@ footer {
 }
 
 
+header {
+    position: relative;
+    /* يسمح للعناصر المطلقة داخله بالتموضع بالنسبة للهيدر */
+    height: 70px;
+    /* ارتفاع الهيدر حسب تصميمك */
+    background-color: #f8f8f8;
+    /* أو لون الهيدر */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* يجعل محتوى الهيدر في الوسط */
+}
+
 .install-btn {
     background: #27ae60;
+    /* لون الزر، يمكن تغييره لينسجم مع الهيدر */
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     cursor: pointer;
     font-family: 'Tajawal', sans-serif;
-    display: none;
+    position: absolute;
+    /* بالنسبة للهيدر */
+    top: 90%;
+    /* منتصف ارتفاع الهيدر */
+    left: 50%;
+    /* منتصف عرض الهيدر */
+    transform: translate(-90%, -50%);
+    /* لضبطه تمامًا في الوسط */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s, transform 0.2s;
 }
 
 .install-btn:hover {
     background: #219150;
+    transform: translate(-50%, -50%) scale(1.05);
 }
 
-#splash-screen{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#fef9f0;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:9999;
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fef9f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-#splash-screen img{
-width:120px;
-height:120px;
-border-radius:50%;
-margin-bottom:15px;
-animation:logoPulse 1.5s infinite;
+#splash-screen img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    animation: logoPulse 1.5s infinite;
 }
 
-#splash-screen h2{
-font-family:'Tajawal',sans-serif;
-color:#e67e22;
+#splash-screen h2 {
+    font-family: 'Tajawal', sans-serif;
+    color: #e67e22;
 }
 
-@keyframes logoPulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
+@keyframes logoPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
