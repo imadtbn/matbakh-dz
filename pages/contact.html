@@ -73,17 +73,17 @@
                     <div class="info-card">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>العنوان</h3>
-                        <p>15 نهج الاستقلال، الجزائر العاصمة، الجزائر</p>
+                        <p> نهج الاستقلال، الجزائر</p>
                     </div>
                     <div class="info-card">
                         <i class="fas fa-phone-alt"></i>
                         <h3>الهاتف</h3>
-                        <p>+213 (0) 23 45 67 89</p>
+                        <p>+213 00 00 00 00</p>
                     </div>
                     <div class="info-card">
                         <i class="fas fa-envelope"></i>
                         <h3>البريد الإلكتروني</h3>
-                        <p>contact@matbakh-dz.com</p>
+                        <p>tabaniimadeddine@gmail.com</p>
                     </div>
                     <div class="info-card">
                         <i class="fas fa-clock"></i>
@@ -99,37 +99,55 @@
             <div class="container">
                 <div class="form-container">
                     <h3>أرسل لنا رسالة</h3>
-                    <form id="contactForm">
+                    <form
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSehLFyvU-yoQG2tGbV89eOG0aljsgqEHuubcHCiuhKYhZVCVw/formResponse"
+                        method="POST" target="_blank" id="contactForm">
+
                         <div class="form-group">
                             <label for="name">الاسم الكامل</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" name="entry.1893132939" id="name" required>
                         </div>
+
                         <div class="form-group">
                             <label for="email">البريد الإلكتروني</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" name="entry.1881013589" id="email" required>
                         </div>
+
                         <div class="form-group">
                             <label for="subject">الموضوع</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" name="entry.1001500194" id="subject" required>
                         </div>
+
                         <div class="form-group">
                             <label for="message">الرسالة</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea name="entry.446061031" id="message" rows="5" required></textarea>
                         </div>
+
                         <button type="submit" class="submit-btn">إرسال <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
         </section>
 
+        <script>
+            // عرض رسالة شكر عند الإرسال
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                alert('شكراً لتواصلك معنا! سيتم توجيهك إلى Google Form لإرسال رسالتك.');
+                // لا نمنع الإرسال لأنه يجب أن يذهب إلى Google Form
+            });
+        </script>
+
         <!-- الخريطة (اختياري) -->
-        <section class="map-section">
+
+        <!--         <section class="map-section">
             <div class="container">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102396.699977104!2d3.041319!3d36.752887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e4f7e8b5b3b7b%3A0x8b0b3b5b5b5b5b5b!2sAlgiers%2C%20Algeria!5e0!3m2!1sen!2sdz!4v1620000000000!5m2!1sen!2sdz"
                     allowfullscreen="" loading="lazy"></iframe>
             </div>
-        </section>
+        </section>  -->
+
+
     </main>
 
     <!-- الفوتر -->
@@ -163,19 +181,13 @@
             </div>
         </div>
         <div class="copyright">
-            <p>© 2024 مطبخ الجزائر. جميع الحقوق محفوظة.</p>
+            <p>© 2026 المطبخ الجزائري. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <script src="../javascript/js-main.js"></script>
-    <script>
-        // معالجة إرسال النموذج (منع الإرسال الافتراضي وعرض رسالة)
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('شكراً لتواصلك معنا! سنرد عليك في أقرب وقت.');
-            this.reset(); // إعادة تعيين الحقول
-        });
-    </script>
+
+
 </body>
 
 </html>
