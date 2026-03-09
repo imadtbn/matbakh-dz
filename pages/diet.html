@@ -11,22 +11,16 @@
     <link rel="icon" href="../icons/logo kozina.webp" alt="icon kozina">
     <link rel="icon" href="https://github.com/imadtbn/kozina-dz/blob/main/icons/logo%20kozina.webp" type="image/webp">
 
-    <meta name="description"
-        content="كوزينة DZ يقدم أفضل الوصفات الجزائرية التقليدية والعصرية، كسكس، شوربة، طواجن، سلطات وحلويات جزائرية مع المكونات وطريقة التحضير بالتفصيل.">
+    <meta name="description" content="كوزينة DZ يقدم أفضل الوصفات الجزائرية التقليدية والعصرية، كسكس، شوربة، طواجن، سلطات وحلويات جزائرية مع المكونات وطريقة التحضير بالتفصيل.">
     <meta name="keywords" content="طبخ جزائري, وصفات جزائرية, كسكس, شربة, حلويات جزائرية, سلطات, وصفات صحية">
     <meta name="author" content="مطبخ الجزائر">
     <meta name="author" content="كوزينة dz">
-    <meta name="description"
-        content="أفضل الحلويات الجزائرية التقليدية والعصرية مثل البقلاوة والمقروط والغريبة مع طريقة التحضير بالتفصيل.">
-    <meta name="description"
-        content="وصفات الطبخ الجزائري التقليدي والعصري مثل الكسكس، الشوربة، والطواجن، سلاطة وحميات للتغذية مع المكونات وطريقة التحضير خطوة بخطوة.">
-    <meta name="description"
-        content="اكتشف أفضل الوصفات الجزائرية التقليدية والعصرية، سلطات طازجة، حلويات جزائرية، ووصفات صحية مع شرح مبسط لطريقة التحضير.">
-    <meta name="description"
-        content="اكتشف أفضل الوصفات الجزائرية التقليدية والعصرية، سلطات طازجة، حلويات جزائرية، ووصفات صحية مع شرح مبسط لطريقة التحضير.">
+    <meta name="description" content="أفضل الحلويات الجزائرية التقليدية والعصرية مثل البقلاوة والمقروط والغريبة مع طريقة التحضير بالتفصيل.">
+    <meta name="description" content="وصفات الطبخ الجزائري التقليدي والعصري مثل الكسكس، الشوربة، والطواجن، سلاطة وحميات للتغذية مع المكونات وطريقة التحضير خطوة بخطوة.">
+    <meta name="description" content="اكتشف أفضل الوصفات الجزائرية التقليدية والعصرية، سلطات طازجة، حلويات جزائرية، ووصفات صحية مع شرح مبسط لطريقة التحضير.">
+    <meta name="description" content="اكتشف أفضل الوصفات الجزائرية التقليدية والعصرية، سلطات طازجة، حلويات جزائرية، ووصفات صحية مع شرح مبسط لطريقة التحضير.">
 
-    <meta name="keywords"
-        content="كوزينة DZ, طبخ جزائري, وصفات جزائرية, كسكس, شربة فريك, حلويات جزائرية, سلطات, مطبخ جزائري">
+    <meta name="keywords" content="كوزينة DZ, طبخ جزائري, وصفات جزائرية, كسكس, شربة فريك, حلويات جزائرية, سلطات, مطبخ جزائري">
     <meta name="author" content="كوزينة DZ">
     <meta name="robots" content="index, follow">
 
@@ -43,7 +37,7 @@
     <header class="sub-header">
         <nav class="navbar">
             <div class="logo">
-                <img src="../icons/logo kozina.webp" alt="كوزينة DZ" class="logo-img">
+                <img src="../icons/logo kozina.webp" alt="كوزينة DZ" class="logo-img" loading="lazy">
                 <h1>المطبخ الجزائري</h1>
             </div>
             <ul class="nav-links">
@@ -66,17 +60,17 @@
         </div>
     </header>
 
-        <!-- الشريط العلوي (محرك البحث + زر النشر) -->
-        <div class="top-bar">
-            <div class="search-container">
+    <!-- الشريط العلوي (محرك البحث + زر النشر) -->
+    <div class="top-bar">
+        <div class="search-container">
             <input type="text" id="search-input" placeholder="ابحث عن وصفة / مقادير، عنوان، ناشر..." aria-label="بحث">
-                <i class="fas fa-search"></i>
-            </div>
+            <i class="fas fa-search"></i>
+        </div>
         <a href="https://forms.gle/DkJgvCXinp5bcagM7" target="_blank" class="btn-submit">
             <i class="fas fa-utensils"></i> نشر- إضافة وصفة
         </a>
-        </div>
-    
+    </div>
+
     <main>
         <!-- أزرار التصفية (اختياري) -->
         <div class="filter-buttons">
@@ -90,6 +84,13 @@
         <!-- شبكة بطاقات الحميات -->
         <section class="section">
             <div class="cards-grid" id="diet-cards"></div>
+
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="load-more-btn">
+المزيد من الوصفات <i class="fas fa-utensils"></i>
+</button>
+            </div>
+
 
             <!-- النافذة المنبثقة (Modal) -->
             <div id="recipeModal" class="modal">
@@ -108,11 +109,10 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col footer-brand">
-                <img src="../icons/logo kozina.webp" alt="كوزينة DZ" class="footer-logo">
+                <img src="../icons/logo kozina.webp" alt="كوزينة DZ" class="footer-logo" loading="lazy">
                 <h3>مطبخ الجزائر</h3>
                 <p>
-                    موقع يقدم أشهى الوصفات الجزائرية التقليدية والعصرية،
-                    مع خيارات صحية تلائم جميع الأنظمة الغذائية.
+                    موقع يقدم أشهى الوصفات الجزائرية التقليدية والعصرية، مع خيارات صحية تلائم جميع الأنظمة الغذائية.
                 </p>
             </div>
             <div class="footer-col">
@@ -135,7 +135,7 @@
             </div>
         </div>
         <div class="copyright">
-                        <p>© 2026 المطبخ الجزائري. جميع الحقوق محفوظة.</p>
+            <p>© 2026 المطبخ الجزائري. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
