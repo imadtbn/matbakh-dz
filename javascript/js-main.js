@@ -1,3 +1,4 @@
+
 // js-main.js
 
 // دالة لعرض البطاقات في حاوية محددة
@@ -12,9 +13,9 @@ function renderCards(containerId, recipes) {
         card.dataset.id = recipe.id;
 
         // تحضير نص المكونات (مصفوفة أو نص)
-        const ingredientsText = Array.isArray(recipe.ingredients) ?
-            recipe.ingredients.join('، ') :
-            recipe.ingredients;
+        const ingredientsText = Array.isArray(recipe.ingredients)
+            ? recipe.ingredients.join('، ')
+            : recipe.ingredients;
 
         card.innerHTML = `
             <div class="card-image">
@@ -112,17 +113,17 @@ document.addEventListener('DOMContentLoaded', loadAllData);
 
 // وظيفة البحث المباشر
 // وظيفة البحث المباشر (موسع ليشمل العنوان، المكونات، الناشر، الشارة)
-document.getElementById('search-input').addEventListener('input', function(e) {
+document.getElementById('search-input').addEventListener('input', function (e) {
     const query = e.target.value.trim().toLowerCase();
     const cards = document.querySelectorAll('.card');
 
     cards.forEach(card => {
         // استخراج النصوص من العناصر المختلفة
-        const title = card.querySelector('h3') ? .textContent.toLowerCase() || '';
-        const ingredients = card.querySelector('.ingredients') ? .textContent.toLowerCase() || '';
-        const author = card.querySelector('.author') ? .textContent.toLowerCase() || '';
-        const badge = card.querySelector('.card-badge') ? .textContent.toLowerCase() || '';
-        const description = card.querySelector('.description') ? .textContent.toLowerCase() || '';
+        const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+        const ingredients = card.querySelector('.ingredients')?.textContent.toLowerCase() || '';
+        const author = card.querySelector('.author')?.textContent.toLowerCase() || '';
+        const badge = card.querySelector('.card-badge')?.textContent.toLowerCase() || '';
+        const description = card.querySelector('.description')?.textContent.toLowerCase() || '';
 
         // دمج جميع النصوص للبحث
         const allText = `${title} ${ingredients} ${author} ${badge}  ${description}`;
@@ -155,6 +156,7 @@ if (burger && navLinks) {
 }
 
 // زر التثبيث APW
+
 let deferredPrompt;
 
 window.addEventListener("beforeinstallprompt", (e) => {
