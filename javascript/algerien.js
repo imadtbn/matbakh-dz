@@ -26,7 +26,7 @@ function renderCards(filter) {
 
         card.innerHTML = `
 <div class="card-image">
-    <img loading="lazy src="${recipe.image}" alt="${recipe.title}">
+    <img src="${recipe.image}" alt="${recipe.title}">
     <span class="card-badge algerien-${recipe.category}">${recipe.badge}</span>
 </div>
 <div class="card-content">
@@ -56,7 +56,7 @@ function showModal(recipe) {
 
     modalBody.innerHTML = `
 <h2>${recipe.title}</h2>
-<img loading="lazy src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; border-radius:8px;">
+<img src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; border-radius:8px;">
 <p><strong>الوصف:</strong> ${recipe.description}</p>
 <p><strong>المقادير:</strong> ${recipe.ingredients}</p>
 <p><strong>طريقة التحضير:</strong> ${recipe.method}</p>
@@ -94,3 +94,4 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 
 // بدء التحميل
 loadRecipes();
+
