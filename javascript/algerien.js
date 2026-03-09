@@ -92,7 +92,5 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
 });
 
-
-
 // بدء التحميل  
 loadRecipes();
