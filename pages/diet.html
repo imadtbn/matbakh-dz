@@ -132,36 +132,8 @@
         </div>
     </footer>
 
-    <script src="../javascript/js-main.js"></script>
     <script src="../javascript/diet.js"></script>
-
-    <script>
-        // فلترة البطاقات حسب الفئة (تنحيف / تسمين)
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('.card');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // إزالة الكلاس النشط من جميع الأزرار
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filterValue = button.dataset.filter;
-
-                cards.forEach(card => {
-                    if (filterValue === 'all') {
-                        card.style.display = 'block';
-                    } else {
-                        if (card.dataset.category === filterValue) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="../javascript/commun.js"></script>
 
 </body>
 
