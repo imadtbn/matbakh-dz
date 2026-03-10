@@ -8,21 +8,16 @@ if (searchInput) {
         cards.forEach(card => {
             const titleEl = card.querySelector('h3');
             const title = titleEl ? titleEl.textContent.toLowerCase() : '';
-
             const ingredientsEl = card.querySelector('.ingredients');
             const ingredients = ingredientsEl ? ingredientsEl.textContent.toLowerCase() : '';
-
             const authorEl = card.querySelector('.author');
             const author = authorEl ? authorEl.textContent.toLowerCase() : '';
-
             const badgeEl = card.querySelector('.card-badge');
             const badge = badgeEl ? badgeEl.textContent.toLowerCase() : '';
-
             const descEl = card.querySelector('.description');
             const description = descEl ? descEl.textContent.toLowerCase() : '';
 
             const allText = `${title} ${ingredients} ${author} ${badge} ${description}`;
-
             card.style.display = allText.includes(query) ? 'block' : 'none';
         });
     });
@@ -37,13 +32,8 @@ if (burger && navLinks) {
         navLinks.classList.toggle('active');
         const icon = burger.querySelector('i');
         if (icon) {
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         }
     });
 
@@ -52,13 +42,12 @@ if (burger && navLinks) {
             navLinks.classList.remove('active');
             const icon = burger.querySelector('i');
             if (icon) {
-                icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
             }
         });
     });
 }
-
 // ========== فلترة البطاقات ==========
 const filterButtons = document.querySelectorAll('.filter-btn');
 
