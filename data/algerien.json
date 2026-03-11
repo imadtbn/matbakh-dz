@@ -1,5 +1,6 @@
 [{
         "id": 1,
+        "slug": "cheesecake-algeria",
         "title": "الكسكس الجزائري بالخضار",
         "category": "traditional",
         "badge": "تقليدي",
@@ -26,6 +27,7 @@
     },
     {
         "id": 2,
+        "slug": "cheese1cake-algeria",
         "title": "الشخشوخة بالدجاج",
         "category": "traditional",
         "badge": "تقليدي",
@@ -53,6 +55,7 @@
     },
     {
         "id": 3,
+        "slug": "cheese2cake-algeria",
         "title": "البركوكس باللحم",
         "category": "traditional",
         "badge": "تقليدي",
@@ -80,4 +83,3 @@
         "date": "2025-03-04"
     }
 ]
-
