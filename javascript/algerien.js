@@ -1,30 +1,33 @@
-    // تحميل بيانات JSON وعرض البطاقات
-    let recipesData = [];
+// تحميل بيانات JSON وعرض البطاقات
+let recipesData = [];
 
-    async function loadRecipes() {
-        try {
-            const response = await fetch('../data/algerien.json'); // تأكد من المسار الصحيح
-            recipesData = await response.json();
-            renderCards('all');
-        } catch (error) {
-            console.error('خطأ في تحميل البيانات:', error);
-            // يمكن عرض رسالة للمستخدم
-        }
+async function loadRecipes() {
+    try {
+        const response = await fetch('../data/algerien.json'); // تأكد من المسار الصحيح
+        recipesData = await response.json();
+        // ترتيب الوصفات حسب التاريخ (الأحدث أولاً)
+        recipesData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        renderCards('all');
+    } catch (error) {
+        console.error('خطأ في تحميل البيانات:', error);
+        // يمكن عرض رسالة للمستخدم
     }
+}
 
-    function renderCards(filter) {
-        const container = document.getElementById('algerien-cards');
-        container.innerHTML = ''; // تفريغ الحاوية
+function renderCards(filter) {
+    const container = document.getElementById('algerien-cards');
+    container.innerHTML = ''; // تفريغ الحاوية
 
-        const filtered = filter === 'all' ? recipesData : recipesData.filter(r => r.category === filter);
+    const filtered = filter === 'all' ? recipesData : recipesData.filter(r => r.category === filter);
 
-        filtered.forEach(recipe => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.dataset.id = recipe.id;
-            card.dataset.category = recipe.category;
+    filtered.forEach(recipe => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.id = recipe.id;
+        card.dataset.category = recipe.category;
 
-            card.innerHTML = `
+        card.innerHTML = `
         <div class="card-image">
             <img src="${recipe.image}" alt="${recipe.title}">
             <span class="card-badge algerien-${recipe.category}">${recipe.badge}</span>
@@ -39,22 +42,22 @@
         </div>
     `;
 
-            // إضافة حدث النقر لفتح النافذة المنبثقة
-            card.addEventListener('click', () => showModal(recipe));
-            container.appendChild(card);
-        });
-    }
+        // إضافة حدث النقر لفتح النافذة المنبثقة
+        card.addEventListener('click', () => showModal(recipe));
+        container.appendChild(card);
+    });
+}
 
-    function showModal(recipe) {
-        const modal = document.getElementById('recipeModal');
-        const modalBody = modal.querySelector('.modal-body');
-        const videoHtml = recipe.video ? `
+function showModal(recipe) {
+    const modal = document.getElementById('recipeModal');
+    const modalBody = modal.querySelector('.modal-body');
+    const videoHtml = recipe.video ? `
     <div class="video-container">
         <iframe width="100%" height="280" src="${recipe.video}" frameborder="0" allowfullscreen></iframe>
     </div>
 ` : '';
 
-        modalBody.innerHTML = `
+    modalBody.innerHTML = `
     <h2>${recipe.title}</h2>
     <img src="${recipe.image}" alt="${recipe.title}" style="max-width:100%; border-radius:8px;">
     <p><strong>الوصف:</strong> ${recipe.description}</p>
@@ -69,48 +72,28 @@
     </div>
 `;
 
-        modal.style.display = 'block';
-    }
-
-    // إغلاق النافذة المنبثقة
-    document.querySelector('.close-modal').addEventListener('click', () => {
-        document.getElementById('recipeModal').style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target.classList.contains('modal')) {
-            e.target.style.display = 'none';
-        }
-    });
-
-    // أزرار التصفية
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderCards(btn.dataset.filter);
-        });
-    });
-
-
-// تحميل وصفات الطبخ الجزائري فقط
-async function loadAlgerienRecipes() {
-    try {
-        const response = await fetch('../data/algerien.json');
-        let recipes = await response.json();
-
-        // ترتيب حسب التاريخ (الأحدث أولاً)
-        recipes.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-        // عرض الوصفات
-        renderCards('algerien-cards', recipes);
-
-    } catch (error) {
-        console.error('خطأ في تحميل وصفات الطبخ الجزائري:', error);
-    }
+    modal.style.display = 'block';
 }
 
-document.addEventListener('DOMContentLoaded', loadAlgerienRecipes);
+// إغلاق النافذة المنبثقة
+document.querySelector('.close-modal').addEventListener('click', () => {
+    document.getElementById('recipeModal').style.display = 'none';
+});
 
-    // بدء التحميل
-    loadRecipes();
+window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+    }
+});
+
+// أزرار التصفية
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderCards(btn.dataset.filter);
+    });
+});
+
+// بدء التحميل
+loadRecipes();
