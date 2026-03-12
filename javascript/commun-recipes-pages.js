@@ -1,9 +1,6 @@
 (function() {
     // التأكد من وجود بيانات الوصفات
-    if (!window.recipesData || !Array.isArray(window.recipesData)) {
-        console.warn('window.recipesData غير موجودة أو ليست مصفوفة في هذه الصفحة.');
-        return;
-    }
+
     
 
     // ترتيب الوصفات حسب تاريخ النشر (الأحدث أولاً)
@@ -67,11 +64,12 @@
         btn.addEventListener('click', function() {
             filterButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            visibleCount = 4; // إعادة التعيين إلى 4
+            visibleCount = 20; // إعادة التعيين إلى 4
             renderCards();
         });
     });
 
     // العرض الأولي
     renderCards();
+
 })();
