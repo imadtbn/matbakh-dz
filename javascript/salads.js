@@ -1,6 +1,9 @@
 // تحميل بيانات JSON وعرض البطاقات
 let recipesData = [];
 
+let visibleCount = 4;     // عدد الوصفات المعروضة أولاً
+const step = 4;           // عدد الوصفات التي تظهر عند الضغط
+
 async function loadRecipes() {
     try {
         const response = await fetch('../data/salads.json'); // تأكد من المسار الصحيح
