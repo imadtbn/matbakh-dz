@@ -1,9 +1,6 @@
 // تحميل بيانات JSON وعرض البطاقات
 let recipesData = [];
 
-let visibleCount = 4;     // عدد الوصفات المعروضة أولاً
-const step = 4;           // عدد الوصفات التي تظهر عند الضغط
-
 async function loadRecipes() {
     try {
         const response = await fetch('../data/salads.json'); // تأكد من المسار الصحيح
@@ -109,19 +106,11 @@ window.addEventListener('click', (e) => {
 // أزرار التصفية
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        // إعادة عدد الوصفات المعروضة
-        visibleCount = 4;
-
         renderCards(btn.dataset.filter);
     });
 });
-
-const loadBtn = document.getElementById('loadMoreBtn');
-if (!loadBtn) return;
 
     // تفعيل زر "المزيد من الوصفات"
     
